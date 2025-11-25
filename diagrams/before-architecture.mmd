@@ -1,0 +1,20 @@
+graph TD
+    User --> ALB1[ALB (Unused)]
+    User --> ALB2[ALB (Unused)]
+    User --> ALB3[ALB (Prod)]
+    
+    ALB3 --> EC2_1[m5.4xlarge]
+    ALB3 --> EC2_2[m5.4xlarge]
+    ALB3 --> EC2_14[...14x Instances...]
+    
+    EC2_1 --> NAT1[NAT GW AZ-A]
+    EC2_2 --> NAT2[NAT GW AZ-B]
+    EC2_14 --> NAT3[NAT GW AZ-C]
+    
+    EC2_1 --> RDS[RDS r5.4xlarge Multi-AZ]
+    EC2_1 --> Redis[Redis Cluster r6g.large]
+    
+    subgraph Waste
+        EBS[8x Unattached EBS]
+        Snap[90 Days Snapshots]
+    end

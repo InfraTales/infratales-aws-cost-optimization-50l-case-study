@@ -1,0 +1,11 @@
+flowchart LR
+    User --> CloudFront
+    CloudFront --> ALB
+    ALB --> EC2
+    EC2 --> DynamoDB
+    EC2 --> S3
+    
+    subgraph Optimization
+        S3 --> Lifecycle[Glacier]
+        EC2 --> ASG[Auto Scaling]
+    end

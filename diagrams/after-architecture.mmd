@@ -1,0 +1,24 @@
+graph TD
+    User --> CF[CloudFront]
+    CF --> ALB[ALB (Consolidated)]
+    
+    ALB --> ASG[Auto Scaling Group]
+    
+    subgraph Compute
+        Spot[Spot Instances]
+        OD[On-Demand Base]
+    end
+    
+    ASG --> Spot
+    ASG --> OD
+    
+    Spot --> VPC_EP[VPC Endpoints]
+    VPC_EP --> S3[S3 Glacier/Intelligent]
+    VPC_EP --> DDB[DynamoDB (On-Demand)]
+    
+    Spot --> RDS[RDS t3.medium]
+    
+    subgraph Governance
+        Lambda[Scheduler Lambda]
+        Budget[AWS Budgets]
+    end

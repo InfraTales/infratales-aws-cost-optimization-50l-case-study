@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant Dev
+    participant Terraform
+    participant AWS
+    participant Slack
+    
+    Dev->>Terraform: Apply Optimization
+    Terraform->>AWS: Replace m5.4xlarge with ASG
+    Terraform->>AWS: Snapshot & Downsize RDS
+    Terraform->>AWS: Create VPC Endpoints
+    Terraform->>AWS: Delete Unused ALBs/EBS
+    
+    AWS-->>Slack: Budget Alert (Spend < Limit)
+    AWS-->>Slack: Cost Anomaly (None Detected)
