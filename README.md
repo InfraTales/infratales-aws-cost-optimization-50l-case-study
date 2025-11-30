@@ -51,11 +51,32 @@ We rebuilt the infrastructure using Terraform with a focus on cost-efficiency:
 - `terraform/after/`: The optimized, production-ready infrastructure.
 - `docs/case-study.md`: The full engineering story of how we found and fixed these issues.
 
+## 👤 Author
+
+**Rahul Ladumor** - Founder of InfraTales
+
+- 🌐 Portfolio: [rahulladumor.in](https://www.rahulladumor.in)
+- ☁️ Blog: [acloudwithrahul.in](https://www.acloudwithrahul.in)
+- 💼 GitHub: [@rahulladumor](https://github.com/rahulladumor)
+- 🏢 Organization: [InfraTales](https://github.com/InfraTales)
+- 📧 Email: rahul.ladumor@infratales.com
+- 💬 LinkedIn: [linkedin.com/in/rahulladumor](https://www.linkedin.com/in/rahulladumor)
+
 ## 🤝 Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ---
-### 🟦 Built by InfraTales
+
+<div align="center">
+
+**Built with ❤️ by [InfraTales](https://github.com/InfraTales)**
+
 Real engineering stories. Real AWS. Real failures.
-https://infratales.com • Projects • Newsletter • Premium Case Studies
+
+<a href="https://infratales.com">Website</a> •
+<a href="https://infratales.com/projects">Projects</a> •
+<a href="https://infratales.com/premium">Premium</a> •
+<a href="https://infratales.com/newsletter">Newsletter</a>
+
+</div>
