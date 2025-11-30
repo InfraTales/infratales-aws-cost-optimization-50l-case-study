@@ -1,0 +1,42 @@
+graph TB
+    subgraph Optimized["Cost-Optimized AWS Architecture"]
+        subgraph Compute["Compute Layer - 95% Savings"]
+            ASG[Auto Scaling Group<br/>Min: 2, Max: 10]
+            Spot[Spot Instances<br/>t3.medium]
+            RI[Reserved Capacity<br/>Baseline Load]
+        end
+        
+        subgraph Data["Data Layer - 94% Savings"]
+            RDS[(RDS t3.medium<br/>Reserved Instance)]
+            S3[(S3 Intelligent<br/>Tiering)]
+            DDB[(DynamoDB<br/>On-Demand)]
+        end
+        
+        subgraph Network["Network Layer - 100% Savings"]
+            VPCE[VPC Endpoints<br/>S3 & DynamoDB]
+            NAT[Consolidated<br/>NAT Gateway]
+        end
+        
+        subgraph Monitoring["FinOps Controls"]
+            Budget[AWS Budgets<br/>Alerts]
+            CUR[Cost & Usage<br/>Reports]
+            Advisor[Trusted Advisor<br/>Recommendations]
+        end
+    end
+    
+    ASG --> Spot
+    ASG --> RI
+    Spot --> RDS
+    RI --> DDB
+    RDS --> S3
+    VPCE --> S3
+    VPCE --> DDB
+    
+    Budget -.->|Alerts| ASG
+    CUR -.->|Analysis| Budget
+    Advisor -.->|Optimize| Compute
+    
+    style Compute fill:#C8E6C9
+    style Data fill:#E3F2FD
+    style Network fill:#FFF9C4
+    style Monitoring fill:#F3E5F5
