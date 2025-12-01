@@ -28,4 +28,4 @@ When using this project:
 
 ## Contact
 
-For security concerns, email: security@infratales.com
+For security concerns, email: rahul.ladumor@infratales.com
